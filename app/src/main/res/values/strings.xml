@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AppWithButton</string>
+    <string name="button_java">I am Java Button</string>
+</resources>
