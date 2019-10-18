@@ -6,8 +6,8 @@ apply plugin: 'com.android.application'
 
 //was added as part of a fix, not just hermes ...
 project.ext.react = [
-        entryFile: "index.js",
-        root: "$rootDir/../appWithJSButton/index.js", // ... but also path might be incorrect
+        entryFile   : "index.js",
+        root        : "$rootDir/../appWithJSButton/index.js", // ... but also path might be incorrect
         enableHermes: true,  // clean and rebuild if changing
 ]
 
@@ -43,12 +43,15 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.android.support:appcompat-v7:28.0.0' //additionally added
     implementation "com.facebook.react:react-native:0.61.2"
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02' // https://github.com/react-navigation/react-navigation/issues/6267#issuecomment-528883756 fixed last crash
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02'
+    // https://github.com/react-navigation/react-navigation/issues/6267#issuecomment-528883756 fixed last crash
 
     // part of the hermes fix
     if (enableHermes) {
@@ -59,4 +62,3 @@ dependencies {
         implementation jscFlavor
     }
 }
-
