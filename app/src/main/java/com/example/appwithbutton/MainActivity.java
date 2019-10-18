@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
+
+import com.facebook.react.ReactFragment;
 import com.facebook.soloader.SoLoader;
 
 public class MainActivity extends Activity {
@@ -41,6 +43,8 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
+        ReactFragment myRNFragment = Builderrea.setComponentName("appWithJSButton").build();
+
     }
 
     // we need this to to handle the permission Accepted or Denied cases for consistent UX.
