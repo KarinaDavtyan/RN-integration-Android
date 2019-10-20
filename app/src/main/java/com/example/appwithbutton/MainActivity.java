@@ -10,10 +10,13 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 
-import com.facebook.react.ReactFragment;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.facebook.soloader.SoLoader;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private final int OVERLAY_PERMISSION_REQ_CODE = 1;  // any value can be chosen
 
@@ -24,6 +27,7 @@ public class MainActivity extends Activity {
         SoLoader.init(this, /* native exopackage */ false);
 
         setContentView(R.layout.activity_main);
+
 
 
 
@@ -43,8 +47,9 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
-        ReactFragment myRNFragment = Builderrea.setComponentName("appWithJSButton").build();
 
+
+    addFragment();
     }
 
     // we need this to to handle the permission Accepted or Denied cases for consistent UX.
@@ -63,5 +68,10 @@ public class MainActivity extends Activity {
 //        mReactInstanceManager.onActivityResult( this, requestCode, resultCode, data );
     }
 
-
+    private void addFragment() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        ReactNativeFragment reactNativeFragment = new ReactNativeFragment();
+        fragmentTransaction.add(R.id.fragment_container, reactNativeFragment).commit();
+    }
 }

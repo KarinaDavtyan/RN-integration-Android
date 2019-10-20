@@ -18,7 +18,7 @@
             android:name=".ReactActivity"
             android:label="@string/app_name">
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:theme="@style/Theme.AppCompat.DayNight">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

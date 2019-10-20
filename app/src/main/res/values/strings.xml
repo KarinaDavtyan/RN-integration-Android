@@ -2,4 +2,7 @@
     <string name="app_name">AppWithButton</string>
     <string name="button_java">I am Java Button</string>
     <string name="text_showing_react_view">Showing react view</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
